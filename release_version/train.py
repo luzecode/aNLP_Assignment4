@@ -146,25 +146,25 @@ def plot_losses(epochs_seen, tokens_seen, train_losses, val_losses):
     - Use fig.tight_layout() before saving.
     - Use plt.savefig(...) and plt.show() at the end.
     """
-     # Create figure and primary axis
+     #create figure
     fig, ax = plt.subplots(figsize=(10, 6))
     
-    # Plot training and validation losses against epochs_seen
+    # plot training and validation losses
     ax.plot(epochs_seen, train_losses, label="Training loss", linewidth=2)
     ax.plot(epochs_seen, val_losses, label="Validation loss", linewidth=2)
     
-    # Add labels and legend
+    # labels and legend
     ax.set_xlabel("Epochs")
     ax.set_ylabel("Loss")
     ax.legend()
     ax.grid(True, alpha=0.3)
     
-    # Create second x-axis on top showing tokens seen
+    # showing the tokens seen
     ax2 = ax.twiny()
-    ax2.plot(tokens_seen, train_losses, alpha=0)  # Invisible plot to sync axes
+    ax2.plot(tokens_seen, train_losses, alpha=0)
     ax2.set_xlabel("Tokens seen")
     
-    # Adjust layout and save
+    #  save
     fig.tight_layout()
     plt.savefig("loss-plot.png")
     plt.show()

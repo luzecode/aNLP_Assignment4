@@ -1,5 +1,0 @@
-﻿.venv/
-*.pth
-*.zip
-__pycache__/
-*.pyc
